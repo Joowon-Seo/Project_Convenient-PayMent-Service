@@ -13,4 +13,6 @@ import java.util.Optional;
 public interface TransactionRepository
         extends JpaRepository<Transaction, Long> {
     // 구현체는 스프링이 만들어줌 TransactionService에서 가져다 쓰기만 하면 됨
+
+    Optional<Transaction> findByTransactionId(String transactionId);
 }
