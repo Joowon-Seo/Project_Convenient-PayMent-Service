@@ -245,7 +245,7 @@ class AccountServiceTest {
     }
 
     @Test
-    @DisplayName("해지 계좌는 해지할 수 없습니다..")
+    @DisplayName("해지 계좌는 해지할 수 없습니다.")
     void deleteAccountFailed_alreadyUnregistered() {
         //given
         AccountUser Pobi = AccountUser.builder()
