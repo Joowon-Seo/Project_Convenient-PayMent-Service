@@ -17,12 +17,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 @Entity
-@EntityListeners(AuditingEntityListener.class)
-public class Account {
-    @Id
-    @GeneratedValue
-    private Long id;
-
+public class Account extends BaseEntity{
     @ManyToOne
     private AccountUser accountUser;
     private String accountNumber;
@@ -33,12 +28,6 @@ public class Account {
 
     private LocalDateTime registerAt;
     private LocalDateTime unRegisterAt;
-
-    @CreatedDate
-    private LocalDateTime createAt;
-    @LastModifiedDate
-    private LocalDateTime updatedAt;
-
 
     // 중요한 데이터를 변경하는 로직은 객체안에서 직접 수행할 수 있도록
     public void useBalance(Long amount) {
